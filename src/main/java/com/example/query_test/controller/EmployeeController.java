@@ -30,4 +30,10 @@ public class EmployeeController {
         Employee employee = service.getById(id);
         return ResponseEntity.ok(employee);
     }
+
+    @GetMapping("/dept/{id}")
+    public ResponseEntity<?> handleSearchDeptNameById(@PathVariable("id") Long id) {
+        List<Department> employees = service.getDeptName(id);
+        return ResponseEntity.ok(employees);
+    }
 }
